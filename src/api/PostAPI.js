@@ -1,6 +1,20 @@
 import axios from "axios";
 
+import { getErrorMessage } from "utils/getErrorMessage";
 
-const getPosts = () => axios.get('https://jsonplaceholder.typicode.com/posts');
+const url = 'https://jsonplaceholder.typicode.com';
 
-export { getPosts };
+const PostsAPI = {
+    getPosts: async () => {
+        try {
+            const { data } = await axios.get(`${url}/posts`)
+            return data;
+        } catch (error) {
+            console.log(errof);
+            return getErrorMessage(error);
+        }
+    }
+}
+
+
+export { PostsAPI };
