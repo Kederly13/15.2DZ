@@ -1,11 +1,11 @@
-import classes from './styles.module.css'
+import classes from './styles.module.css';
 
-const Header = () => {
-    return (
-        <header className={classes.mainHeader}>
-            <p>header</p>
+const Header = () => (
+    <div className="container">
+        <header className={classes.header}>
+            <p>Posts Page</p>
         </header>
-    )
-}
+    </div>
+)
   
   export { Header };

@@ -1,6 +1,18 @@
 import axios from "axios";
 
+import { getErrorMessage } from "utils/getErrorMessage";
 
-const getPosts = () => axios.get('https://jsonplaceholder.typicode.com/posts');
+const PostsApi = {
+    getAll: async () => {
+        try {
+            const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            return data;
+        } catch (error) {
+            console.log(error);
+            return getErrorMessage(error);
+        }
+    }
+}
 
-export { getPosts };
+
+export { PostsApi };

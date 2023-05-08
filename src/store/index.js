@@ -8,7 +8,7 @@ import { postsReducer } from './posts/reducers';
 
 
 const store = configureStore({
-    reducer: postsReducer,
+    reducer: { postsReducer },
     enhancers: [composeWithDevTools(applyMiddleware(thunk))],
 })
 

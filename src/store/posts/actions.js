@@ -1,4 +1,4 @@
-import { getPosts } from "api/PostAPI";
+import { PostsApi } from "api";
 
 import { getErrorMessage } from "utils/getErrorMessage";
 
@@ -13,8 +13,9 @@ export const setPostsAction = (payload) => {
 
 export const loadPosts = () => async (dispatch) => {
     try {
-        const { data } = await getPosts();
-        dispatch(setPostsAction(data))
+        PostsApi.getAll().then(response => {
+            dispatch(setPostsAction(response))
+        })
     } catch (error) {
         console.log(error);
         return getErrorMessage(error);

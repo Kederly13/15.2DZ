@@ -1,11 +1,13 @@
 import classes from './styles.module.css'
 
-const Footer = () => {
-    return (
-      <footer className={classes.mainFooter}>
-          <p>footer</p>
+const Footer = () => (
+    <div className='container'>
+      <footer className={classes.footer}>
+          <p>
+              Visit Us again
+          </p>
       </footer>
-    );
-  }
+    </div>
+  )
   
   export { Footer };

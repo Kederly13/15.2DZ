@@ -1,12 +1,12 @@
 import { Layout } from 'components/Layout';
-import { MainPage } from 'scenes/MainPage/MainPage';
+import { Home } from 'scenes/Home';
 
 
 
 const App = () => {
   return (
     <Layout>
-      <MainPage />
+      <Home />
     </Layout>   
   );
 }
