@@ -1,4 +1,4 @@
-import { PostsAPI } from "api/PostAPI";
+import { getPosts } from "api/PostAPI";
 
 import { getErrorMessage } from "utils/getErrorMessage";
 
@@ -22,5 +22,11 @@ export const setPostsAction = (payload) => {
 // }
 
 export const loadPosts = () => async (dispatch) => {
-    
+    try {
+        const { data } = await getPosts();
+        dispatch(setPostsAction(data))
+    } catch (error) {
+        console.log(error);
+        return getErrorMessage(error);
+    }
 }

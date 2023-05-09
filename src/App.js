@@ -4,7 +4,7 @@ import { Home } from 'scenes/Home';
 const App = () => {
   return (
     <Layout>
-      <Home  />
+      <MainPage />
     </Layout>   
   );
 }
